@@ -1,32 +1,32 @@
 ---@type AstroThemeCallback
-local function callback()
+local function callback(c)
   return {
     NeogitDiffDelete = {
-      bg = C.ui.base,
-      fg = C.syntax.red,
+      bg = c.ui.base,
+      fg = c.syntax.red,
     },
     NeogitDiffDeleteHighlight = {
-      bg = C.ui.base,
-      fg = C.syntax.red,
+      bg = c.ui.base,
+      fg = c.syntax.red,
     },
     NeogitDiffAdd = {
-      bg = C.ui.base,
-      fg = C.syntax.green,
+      bg = c.ui.base,
+      fg = c.syntax.green,
     },
     NeogitDiffAddHighlight = {
-      bg = C.ui.base,
-      fg = C.syntax.green,
+      bg = c.ui.base,
+      fg = c.syntax.green,
     },
     NeogitDiffContextHighlight = {
-      bg = C.ui.inactive_base,
+      bg = c.ui.inactive_base,
     },
     NeogitDiffContext = {
-      bg = C.ui.inactive_base,
-      fg = C.ui.text_inactive,
+      bg = c.ui.inactive_base,
+      fg = c.ui.text_inactive,
     },
     NeogitHunkHeader = {
-      bg = C.ui.text_inactive,
-      fg = C.ui.text_active,
+      bg = c.ui.text_inactive,
+      fg = c.ui.text_active,
     },
   }
 end

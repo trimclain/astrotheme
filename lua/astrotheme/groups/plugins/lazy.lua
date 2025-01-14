@@ -1,37 +1,37 @@
 ---@type AstroThemeCallback
-local function callback()
+local function callback(c)
   return {
-    LazyH1 = { fg = C.ui.base, bg = C.ui.accent, bold = true }, -- home button
-    LazyH2 = { fg = C.ui.accent, bold = true }, -- titles
-    LazyComment = { link = "Comment" },
-    LazyNormal = { link = "NormalFloat" },
-    LazyCommit = { fg = C.ui.text_inactive, bold = true }, -- commit ref
-    LazyCommitIssue = { fg = C.ui.yellow },
-    LazyCommitType = { fg = C.ui.accent, bold = true }, -- conventional commit type
+    LazyH1 = { fg = c.ui.base, bg = c.ui.accent, bold = true }, -- home button
+    LazyH2 = { fg = c.ui.accent, bold = true }, -- titles
+    LazyComment = "Comment",
+    LazyNormal = "NormalFloat",
+    LazyCommit = { fg = c.ui.text_inactive, bold = true }, -- commit ref
+    LazyCommitIssue = { fg = c.ui.yellow },
+    LazyCommitType = { fg = c.ui.accent, bold = true }, -- conventional commit type
     LazyCommitScope = { italic = true }, -- conventional commit scope
-    LazyDimmed = { link = "Conceal" }, -- property
-    LazyProp = { link = "Conceal" }, -- property
-    LazyValue = { fg = C.ui.green }, -- value of a property
-    LazyNoCond = { link = "DiagnosticWarn" }, -- unloaded icon for a plugin where `cond()` was false
-    LazyLocal = { fg = C.ui.yellow },
-    LazyProgressDone = { fg = C.ui.green }, -- progress bar done
-    LazyProgressTodo = { link = "LineNr" }, -- progress bar todo
-    LazySpecial = { fg = C.ui.blue },
-    LazyReasonRuntime = { fg = C.ui.yellow },
-    LazyReasonPlugin = { fg = C.ui.blue },
-    LazyReasonEvent = { fg = C.ui.yellow },
-    LazyReasonKeys = { fg = C.ui.purple },
-    LazyReasonStart = { fg = C.ui.red },
-    LazyReasonSource = { fg = C.ui.green },
-    LazyReasonFt = { fg = C.ui.cyan },
-    LazyReasonCmd = { fg = C.ui.orange },
-    LazyReasonImport = { fg = C.ui.text },
-    LazyButton = { link = "CursorLine" },
-    LazyButtonActive = { link = "Visual" },
-    LazyTaskOutput = { fg = C.ui.text }, -- task output
-    LazyTaskError = { fg = C.ui.red }, -- task errors
-    LazyDir = { fg = C.ui.orange }, -- directory
-    LazyUrl = { fg = C.ui.blue, underline = true }, -- url
+    LazyDimmed = "Conceal", -- property
+    LazyProp = "Conceal", -- property
+    LazyValue = { fg = c.ui.green }, -- value of a property
+    LazyNoCond = "DiagnosticWarn", -- unloaded icon for a plugin where `cond()` was false
+    LazyLocal = { fg = c.ui.yellow },
+    LazyProgressDone = { fg = c.ui.green }, -- progress bar done
+    LazyProgressTodo = "LineNr", -- progress bar todo
+    LazySpecial = { fg = c.ui.blue },
+    LazyReasonRuntime = { fg = c.ui.yellow },
+    LazyReasonPlugin = { fg = c.ui.blue },
+    LazyReasonEvent = { fg = c.ui.yellow },
+    LazyReasonKeys = { fg = c.ui.purple },
+    LazyReasonStart = { fg = c.ui.red },
+    LazyReasonSource = { fg = c.ui.green },
+    LazyReasonFt = { fg = c.ui.cyan },
+    LazyReasonCmd = { fg = c.ui.orange },
+    LazyReasonImport = { fg = c.ui.text },
+    LazyButton = "CursorLine",
+    LazyButtonActive = "Visual",
+    LazyTaskOutput = { fg = c.ui.text }, -- task output
+    LazyTaskError = { fg = c.ui.red }, -- task errors
+    LazyDir = { fg = c.ui.orange }, -- directory
+    LazyUrl = { fg = c.ui.blue, underline = true }, -- url
   }
 end
 

@@ -1,5 +1,192 @@
 # Changelog
 
+## [4.7.3](https://github.com/AstroNvim/astrotheme/compare/v4.7.2...v4.7.3) (2024-12-24)
+
+
+### Bug Fixes
+
+* **plugins:** fix callbacks ([#154](https://github.com/AstroNvim/astrotheme/issues/154)) ([a7f0266](https://github.com/AstroNvim/astrotheme/commit/a7f0266ec91d2d938e19b43e804c32b94f0ea530))
+
+## [4.7.2](https://github.com/AstroNvim/astrotheme/compare/v4.7.1...v4.7.2) (2024-12-10)
+
+
+### Bug Fixes
+
+* **base:** add new diff highlight groups ([e90c63e](https://github.com/AstroNvim/astrotheme/commit/e90c63e375142b6608e29669acac9f170ba8bdce))
+
+## [4.7.1](https://github.com/AstroNvim/astrotheme/compare/v4.7.0...v4.7.1) (2024-12-03)
+
+
+### Bug Fixes
+
+* **base:** improve folded text appearance ([4280c07](https://github.com/AstroNvim/astrotheme/commit/4280c07cb683394ef35a26aca17040ff6145bdf4))
+
+## [4.7.0](https://github.com/AstroNvim/astrotheme/compare/v4.6.0...v4.7.0) (2024-10-14)
+
+
+### Features
+
+* **plugins:** add `blink.cmp` support ([46e8c5b](https://github.com/AstroNvim/astrotheme/commit/46e8c5bdf285be5b02a0d0ae4c3babe0a19833c6))
+
+## [4.6.0](https://github.com/AstroNvim/astrotheme/compare/v4.5.2...v4.6.0) (2024-10-10)
+
+
+### Features
+
+* **plugins:** render-markdown.nvim support ([#149](https://github.com/AstroNvim/astrotheme/issues/149)) ([ad44453](https://github.com/AstroNvim/astrotheme/commit/ad444535e20c9fcbd79690a0ea61965d5e682f03))
+* **treesitter:** markdown modifications ([#148](https://github.com/AstroNvim/astrotheme/issues/148)) ([e70a534](https://github.com/AstroNvim/astrotheme/commit/e70a534f454454884a51d983a83693927690b975))
+
+## [4.5.2](https://github.com/AstroNvim/astrotheme/compare/v4.5.1...v4.5.2) (2024-09-26)
+
+
+### Bug Fixes
+
+* correctly maintain `background` setting when changing colorscheme styles ([7673bbe](https://github.com/AstroNvim/astrotheme/commit/7673bbe847bda6cb6d0b70d981eed60bd1039aaf))
+
+## [4.5.1](https://github.com/AstroNvim/astrotheme/compare/v4.5.0...v4.5.1) (2024-09-16)
+
+
+### Bug Fixes
+
+* **treesitter:** improve comment and list highlights ([a7bdde1](https://github.com/AstroNvim/astrotheme/commit/a7bdde1866bcd7b16e7054a278f4e9ca6aeca2eb))
+
+## [4.5.0](https://github.com/AstroNvim/astrotheme/compare/v4.4.2...v4.5.0) (2024-09-15)
+
+
+### Features
+
+* **treesitter:** add `&lt;?php ... ?&gt;` highlights ([#144](https://github.com/AstroNvim/astrotheme/issues/144)) ([4ef753c](https://github.com/AstroNvim/astrotheme/commit/4ef753cec74b42ad81867e2eddb48bcfb31f0a72))
+
+## [4.4.2](https://github.com/AstroNvim/astrotheme/compare/v4.4.1...v4.4.2) (2024-09-06)
+
+
+### Bug Fixes
+
+* **tmux:** fix 24h clock support ([c4c0e1d](https://github.com/AstroNvim/astrotheme/commit/c4c0e1d6ce907fda2bf4ad23c4f69ef064b8ecda))
+
+## [4.4.1](https://github.com/AstroNvim/astrotheme/compare/v4.4.0...v4.4.1) (2024-08-29)
+
+
+### Bug Fixes
+
+* **base:** update `PmenuSel` to work with 0.11 changes ([0576aa8](https://github.com/AstroNvim/astrotheme/commit/0576aa839619788746847c0eb3c2fb4a8997d650))
+
+
+### Reverts
+
+* **base:** go back to non-reverse highlight, this breaks other stuff ([7320096](https://github.com/AstroNvim/astrotheme/commit/732009638cc1ad79c440430c3606a0167c662874))
+
+## [4.4.0](https://github.com/AstroNvim/astrotheme/compare/v4.3.0...v4.4.0) (2024-08-27)
+
+
+### Features
+
+* **extras:** add MonkeyType theme ([bb53e34](https://github.com/AstroNvim/astrotheme/commit/bb53e348f0a80e11f5a8d40767dd439f90722dd3))
+* **extras:** add URL for applying MonkeyType themes ([00d6c39](https://github.com/AstroNvim/astrotheme/commit/00d6c39880a37c0e0eaddae35f6da2df0113ecd6))
+* **plugins:** support avante.nvim ([#139](https://github.com/AstroNvim/astrotheme/issues/139)) ([199a2ab](https://github.com/AstroNvim/astrotheme/commit/199a2ab78bbbfbbeaa58689df9fab41731589f51))
+
+
+### Bug Fixes
+
+* **base:** improve diff highlights ([3426ac6](https://github.com/AstroNvim/astrotheme/commit/3426ac652d520a3975858a2d33ecf4cf9aa08ce8))
+* **extras:** move to a more usable version of delivering MonkeyType themes ([f1e8bb6](https://github.com/AstroNvim/astrotheme/commit/f1e8bb63b17df318024c4e05b2b004cf94d42985))
+
+## [4.3.0](https://github.com/AstroNvim/astrotheme/compare/v4.2.0...v4.3.0) (2024-07-24)
+
+
+### Features
+
+* **extras:** add `fuzzel` theme ([e72a6b8](https://github.com/AstroNvim/astrotheme/commit/e72a6b8b75d19cc8d973bea7de8095ea3e54ee7f))
+* **extras:** add aerc theme ([8d76040](https://github.com/AstroNvim/astrotheme/commit/8d76040a4fc57c65767cb9a06f3b28ee5cee53ad))
+* **extras:** add Gnome Terminal theme ([7a8e826](https://github.com/AstroNvim/astrotheme/commit/7a8e8268b83d08670f0d421dfcfb73abb3752210))
+* **extras:** add proccess_compose theme ([c03d782](https://github.com/AstroNvim/astrotheme/commit/c03d782ecc79609f65e0ebd870e0843cf8b77039))
+* **extras:** add tmux theme ([1c8d80d](https://github.com/AstroNvim/astrotheme/commit/1c8d80d096359ff9feeea6d033c21217289e0bc0))
+* **extras:** add Vimium theme ([8d1a1d9](https://github.com/AstroNvim/astrotheme/commit/8d1a1d9c1847c57f6b8a156f602e708e9b0b1b88))
+
+## [4.2.0](https://github.com/AstroNvim/astrotheme/compare/v4.1.0...v4.2.0) (2024-07-15)
+
+
+### Features
+
+* add `fzf-lua` support and `fzf` extra theme ([c94f756](https://github.com/AstroNvim/astrotheme/commit/c94f756ad14fe2bcdc35462d9348e4b206255c63))
+* **extras:** add `prism` colorscheme ([a6c8fe1](https://github.com/AstroNvim/astrotheme/commit/a6c8fe1bb079b6a22b49d6d11a027f906a1a7b7b))
+* **extras:** add `st` colorscheme ([28f2a1d](https://github.com/AstroNvim/astrotheme/commit/28f2a1d5f1885f12d294fc5ef2c42164ca77c238))
+* **extras:** add `sublime` colorscheme ([fc00d62](https://github.com/AstroNvim/astrotheme/commit/fc00d627fddc0e1cf2afd3eebf40ebe4801fc1ca))
+* **extras:** add `yazi` colorscheme ([4a5caf2](https://github.com/AstroNvim/astrotheme/commit/4a5caf20193e9df3d3c6a807c1b863981d322790))
+* **extras:** add `zathura` colorscheme ([9413aca](https://github.com/AstroNvim/astrotheme/commit/9413acac980fb75adc5b83e9d52d189b0b9e4554))
+* **extras:** add Ghostty ([824f866](https://github.com/AstroNvim/astrotheme/commit/824f866c45e5ad013e6153924e5412c2cc534412))
+
+## [4.1.0](https://github.com/AstroNvim/astrotheme/compare/v4.0.0...v4.1.0) (2024-07-12)
+
+
+### Features
+
+* **extras:** add  Alacritty theme ([304a662](https://github.com/AstroNvim/astrotheme/commit/304a66287d6a09d693bb04437abbfd1658bf1a05))
+* **extras:** add `lua` to extras ([6bdac76](https://github.com/AstroNvim/astrotheme/commit/6bdac766cde6ae65eebd7b94af1841d5722f0032))
+* **extras:** add `vim` colorscheme to extras ([35eba15](https://github.com/AstroNvim/astrotheme/commit/35eba15d5b2e0f3e25482eeb7c0e2b3468c27fb9))
+* **extras:** add automatic generation of extras with templating ([aabb735](https://github.com/AstroNvim/astrotheme/commit/aabb7352748fcca1bc799da74b3577fa6beb6cd8))
+* **extras:** add Delta theme ([c547361](https://github.com/AstroNvim/astrotheme/commit/c547361a9010ca539e85497e6952bf4510ce3fb7))
+* **extras:** add Dunst theme ([ff1c5a0](https://github.com/AstroNvim/astrotheme/commit/ff1c5a0ca204ce86cc1576fe8b32e6e30da65385))
+* **extras:** add Fish themes ([98313e9](https://github.com/AstroNvim/astrotheme/commit/98313e9f39aa6245496463cdeb7c00d513b7c436))
+* **extras:** add Foot theme ([bc07be5](https://github.com/AstroNvim/astrotheme/commit/bc07be50ab9f81e22be79cef8bacb7ec6520d1ca))
+* **extras:** add GitUI theme ([a543d01](https://github.com/AstroNvim/astrotheme/commit/a543d0157e636db5798372cfb3ef0a616cff1f3f))
+* **extras:** add Helix theme ([a4629f0](https://github.com/AstroNvim/astrotheme/commit/a4629f075b1cb52e0e1fe110bbac103c867e9c79))
+* **extras:** add iTerm theme ([a985053](https://github.com/AstroNvim/astrotheme/commit/a9850537ea8bc56adb3adefbe349237320504fda))
+* **extras:** add Kitty theme ([705a03d](https://github.com/AstroNvim/astrotheme/commit/705a03dd5c058f5ca6b7248e7ff86cac4f3bc674))
+* **extras:** add LazyGit theme ([60c3763](https://github.com/AstroNvim/astrotheme/commit/60c37634f451cb45fb130ff06a159d33fb9bca86))
+* **extras:** add Slack theme ([67198bb](https://github.com/AstroNvim/astrotheme/commit/67198bb5e4d47b169fc867b078bb5e0ce1fb898e))
+* **extras:** add Spotify Player theme ([f77b768](https://github.com/AstroNvim/astrotheme/commit/f77b7680c27e1944dd2f4cb6efa8b2d915366232))
+* **extras:** add Terminator theme ([c071a93](https://github.com/AstroNvim/astrotheme/commit/c071a934d315f8e2e224165d02cfdeee9b2fba0d))
+* **extras:** add Tilix theme ([0c7adf2](https://github.com/AstroNvim/astrotheme/commit/0c7adf20b91d9dc1e281a28eb132ecfa27fe6346))
+* **extras:** add Windows Terminal theme ([6e92bf7](https://github.com/AstroNvim/astrotheme/commit/6e92bf776eb2e7387e7ae590442efb1e940f7d15))
+* **extras:** add XFCE Terminal theme ([655a345](https://github.com/AstroNvim/astrotheme/commit/655a3456dab1031c1cc65ffb191ae18a1da527a8))
+* **extras:** add XResources theme ([376ca09](https://github.com/AstroNvim/astrotheme/commit/376ca09e1527d547a5c7cc83cd0894658ad27495))
+* **extras:** add zellij theme ([1d3bd42](https://github.com/AstroNvim/astrotheme/commit/1d3bd42ea1628541ec8249f138935bc2bc9fc31a))
+
+
+### Bug Fixes
+
+* **extras:** fix style name ([9f1db05](https://github.com/AstroNvim/astrotheme/commit/9f1db05bef9833514e31e4362c2804a024ac3682))
+* **extras:** improve palette style names ([0e7f5e2](https://github.com/AstroNvim/astrotheme/commit/0e7f5e2bec6410a3213de4a890c8b18b7d8903ed))
+* **palettes:** add missing colors ([1c49d0d](https://github.com/AstroNvim/astrotheme/commit/1c49d0df0ec2a6b45be3c0152019e954fe8a70a1))
+
+## [4.0.0](https://github.com/AstroNvim/astrotheme/compare/v3.9.0...v4.0.0) (2024-07-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove `dev` mode and move to automatic dev detection using `mini.hipatterns`
+
+### Features
+
+* add syntactic sugar to links ([b4a6355](https://github.com/AstroNvim/astrotheme/commit/b4a6355bd60d062c729bf800a3df4ae839c788c7))
+* only enable dev mode if `dev` mode enabled in Lazy ([36c57b4](https://github.com/AstroNvim/astrotheme/commit/36c57b442a0abe36e753343976212e884a9e8158))
+* **plugins:** add `mini.icons` support ([a551c24](https://github.com/AstroNvim/astrotheme/commit/a551c248eac4fd8cd6e1c7a62540fc7e9209960f))
+* remove `dev` mode and move to automatic dev detection using `mini.hipatterns` ([1b6ee72](https://github.com/AstroNvim/astrotheme/commit/1b6ee72619dc475fbbe96bc3df9ebae71d211db5))
+* **util:** allow adhoc toggling of live reloading ([92cbe2e](https://github.com/AstroNvim/astrotheme/commit/92cbe2efe4f239bd419cc2e182f54d07e2580d28))
+
+
+### Bug Fixes
+
+* disable lazy loading of `mini.hipatterns` in AstroTheme project ([dac0ccf](https://github.com/AstroNvim/astrotheme/commit/dac0ccf6dc6e87c09bfc3c7dffe891b155694674))
+* fix typo ([d83b89c](https://github.com/AstroNvim/astrotheme/commit/d83b89cd495e72d682259a2952066cd74df98fd1))
+* **palettes:** add missing tables ([110ab34](https://github.com/AstroNvim/astrotheme/commit/110ab34c642399a0fe0ad65839113068a9eb0900))
+
+## [3.9.0](https://github.com/AstroNvim/astrotheme/compare/v3.8.0...v3.9.0) (2024-06-17)
+
+
+### Features
+
+* modify `[@markup](https://github.com/markup)` highlights to improve distinction and readability ([829dd74](https://github.com/AstroNvim/astrotheme/commit/829dd7440cc675fa51f75fbeee0da6f066b471d4))
+* **treesitter:** modify markup highlights for better color distinction ([#129](https://github.com/AstroNvim/astrotheme/issues/129)) ([829dd74](https://github.com/AstroNvim/astrotheme/commit/829dd7440cc675fa51f75fbeee0da6f066b471d4))
+
+## [3.8.0](https://github.com/AstroNvim/astrotheme/compare/v3.7.2...v3.8.0) (2024-05-27)
+
+
+### Features
+
+* **lsp:** add new `Ok` diagnostic highlight ([7a9b5de](https://github.com/AstroNvim/astrotheme/commit/7a9b5de05b381ce1fd2ab13d2fbc2409bfefc9b2))
+
 ## [3.7.2](https://github.com/AstroNvim/astrotheme/compare/v3.7.1...v3.7.2) (2024-05-22)
 
 

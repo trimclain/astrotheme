@@ -1,19 +1,19 @@
-local C = require("astrotheme.lib.util").set_palettes(require("astrotheme").config)
+local c = require("astrotheme.lib.util").set_palettes(require("astrotheme").config)
 
 return {
   normal = {
-    a = { fg = C.ui.base, bg = C.syntax.blue, gui = "bold" },
-    b = { fg = C.ui.purple, bg = C.ui.statusline },
-    c = { fg = C.ui.active_text, bg = C.ui.statusline },
+    a = { fg = c.ui.base, bg = c.syntax.blue, gui = "bold" },
+    b = { fg = c.ui.purple, bg = c.ui.statusline },
+    c = { fg = c.ui.text_active, bg = c.ui.statusline },
   },
-  insert = { a = { fg = C.ui.base, bg = C.ui.green, gui = "bold" } },
-  visual = { a = { fg = C.ui.base, bg = C.ui.purple, gui = "bold" } },
-  replace = { a = { fg = C.ui.base, bg = C.ui.red, gui = "bold" } },
-  command = { a = { fg = C.ui.base, bg = C.ui.yellow, gui = "bold" } },
-  terminal = { a = { fg = C.ui.base, bg = C.ui.orange, gui = "bold" } },
+  insert = { a = { fg = c.ui.base, bg = c.ui.green, gui = "bold" } },
+  visual = { a = { fg = c.ui.base, bg = c.ui.purple, gui = "bold" } },
+  replace = { a = { fg = c.ui.base, bg = c.ui.red, gui = "bold" } },
+  command = { a = { fg = c.ui.base, bg = c.ui.yellow, gui = "bold" } },
+  terminal = { a = { fg = c.ui.base, bg = c.ui.orange, gui = "bold" } },
   inactive = {
-    a = { fg = C.ui.text_inactive, bg = C.ui.base, gui = "bold" },
-    b = { fg = C.ui.text_inactive, bg = C.ui.base, gui = "bold" },
-    c = { fg = C.ui.text_inactive, bg = C.ui.base, gui = "bold" },
+    a = { fg = c.ui.text_inactive, bg = c.ui.base, gui = "bold" },
+    b = { fg = c.ui.text_inactive, bg = c.ui.base, gui = "bold" },
+    c = { fg = c.ui.text_inactive, bg = c.ui.base, gui = "bold" },
   },
 }

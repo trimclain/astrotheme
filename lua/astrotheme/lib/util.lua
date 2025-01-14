@@ -10,12 +10,11 @@ local M = {}
 
 --- Reload a given theme
 ---@param opts AstroThemeOpts
----@param theme string
-function M.reload(opts, theme)
+function M.reload(opts)
   if vim.g.colors_name then vim.cmd.highlight "clear" end
   if vim.fn.exists "syntax_on" then vim.cmd.syntax "reset" end
   vim.o.termguicolors = opts.termguicolors
-  vim.g.colors_name = theme
+  vim.g.colors_name = opts.palette
 end
 
 --- Reload a module
@@ -55,21 +54,47 @@ function M.get_plugin_list(opts)
   return plugins
 end
 
---- Compile all highlights from a list of modules
----@param highlights AstroThemeHighlights
----@param path string
----@param modules string[]
+--- Compile highlights from a module
+---@param colors AstroThemePalette
+---@param opts AstroThemeOpts
+---@param module string
+---@return AstroThemeHighlights?
+function M.get_module_highlights(colors, opts, module)
+  local file_avail, file = pcall(require, module)
+  if type(file) == "function" then file = file(colors, opts.style) end
+  if file_avail then
+    return file --[[@as AstroThemeHighlights]]
+  end
+end
+
+--- Compile all highlights given a configuration
+---@param colors AstroThemePalette
 ---@param opts AstroThemeOpts
 ---@return AstroThemeHighlights
-function M.get_hl_modules(highlights, path, modules, opts)
-  for _, module in ipairs(modules) do
-    if opts.dev then package.loaded[path .. "." .. module] = nil end
-    local file_avail, file = pcall(require, path .. "." .. module)
-    if type(file) == "function" then file = file(opts.style) end
-    ---@diagnostic disable-next-line: cast-local-type
-    if file_avail then highlights = vim.tbl_deep_extend("force", file, highlights) end
+function M.get_highlights(colors, opts)
+  local highlights = {}
+  for _, base in ipairs {
+    "base",
+    "syntax",
+    "lsp",
+    "treesitter",
+    "astronvim",
+  } do
+    local module_highlights = M.get_module_highlights(colors, opts, "astrotheme.groups." .. base)
+    if module_highlights then highlights = vim.tbl_deep_extend("force", module_highlights, highlights) end
   end
-  ---@cast highlights AstroThemeHighlights
+  for _, plugin in ipairs(M.get_plugin_list(opts)) do
+    local module_highlights = M.get_module_highlights(colors, opts, "astrotheme.groups.plugins." .. plugin)
+    if module_highlights then highlights = vim.tbl_deep_extend("force", module_highlights, highlights) end
+  end
+
+  local global_hl = opts.highlights.global
+  local theme_hl = opts.highlights[opts.palette]
+
+  pcall(global_hl.modify_hl_groups, highlights, colors)
+  pcall(theme_hl.modify_hl_groups, highlights, colors)
+
+  highlights = vim.tbl_deep_extend("force", highlights, global_hl, theme_hl)
   return highlights
 end
 
@@ -78,7 +103,6 @@ end
 ---@return AstroThemePalette
 function M.set_palettes(opts)
   local palette_name = "astrotheme.palettes." .. opts.palette
-  if opts.dev then package.loaded[palette_name] = nil end
   local palette = require(palette_name)
   palette = vim.tbl_deep_extend("force", palette, opts.palettes.global)
   palette = vim.tbl_deep_extend("force", palette, opts.palettes[opts.palette])
@@ -87,74 +111,46 @@ function M.set_palettes(opts)
 end
 
 --- Set highlights in Neovim
----@param opts AstroThemeOpts
 ---@param highlights AstroThemeHighlights
----@param theme string
-function M.set_highlights(opts, highlights, theme)
-  local global_hl = opts.highlights.global
-  local theme_hl = opts.highlights[theme]
-
-  pcall(global_hl.modify_hl_groups, highlights, C)
-  pcall(theme_hl.modify_hl_groups, highlights, C)
-
-  ---@diagnostic disable-next-line: cast-local-type
-  highlights = vim.tbl_deep_extend("force", highlights, global_hl, theme_hl)
-  ---@cast highlights -nil
-  for name, value in pairs(highlights) do
+function M.set_highlights(highlights)
+  for name, hl in pairs(highlights) do
     -- TODO: optimise in V3 by removing checks.
-    if name ~= "modify_hl_groups" then vim.api.nvim_set_hl(0, name, value) end
-  end
-end
-
---- Enable live reloading of AstroTheme for development
----@param opts AstroThemeOpts
-function M.live_reloading(opts)
-  if opts.dev then
-    vim.api.nvim_create_augroup("AstroTheme", { clear = true })
-    vim.api.nvim_create_autocmd("BufWritePost", {
-      -- buffer = 0,
-      pattern = "*.lua",
-      group = "AstroTheme",
-      callback = function()
-        local theme = vim.g.colors_name
-        if string.match(theme, "astro") then
-          local command = ":colorscheme " .. theme
-          vim.api.nvim_feedkeys(command, "t", true)
-          vim.api.nvim_input "<CR>"
-        end
-      end,
-    })
+    if name ~= "modify_hl_groups" then
+      if type(hl) == "string" then hl = { link = hl } end
+      vim.api.nvim_set_hl(0, name, hl)
+    end
   end
 end
 
 --- Set terminal colors based on the currently loaded colors
-function M.set_terminal_colors()
-  vim.g.terminal_color_0 = C.term.black
-  vim.g.terminal_color_8 = C.term.bright_black
+---@param c AstroThemePalette
+function M.set_terminal_colors(c)
+  vim.g.terminal_color_0 = c.term.black
+  vim.g.terminal_color_8 = c.term.bright_black
 
-  vim.g.terminal_color_1 = C.term.red
-  vim.g.terminal_color_9 = C.term.bright_red
+  vim.g.terminal_color_1 = c.term.red
+  vim.g.terminal_color_9 = c.term.bright_red
 
-  vim.g.terminal_color_2 = C.term.green
-  vim.g.terminal_color_10 = C.term.bright_green
+  vim.g.terminal_color_2 = c.term.green
+  vim.g.terminal_color_10 = c.term.bright_green
 
-  vim.g.terminal_color_3 = C.term.yellow
-  vim.g.terminal_color_11 = C.term.bright_yellow
+  vim.g.terminal_color_3 = c.term.yellow
+  vim.g.terminal_color_11 = c.term.bright_yellow
 
-  vim.g.terminal_color_4 = C.term.blue
-  vim.g.terminal_color_12 = C.term.bright_blue
+  vim.g.terminal_color_4 = c.term.blue
+  vim.g.terminal_color_12 = c.term.bright_blue
 
-  vim.g.terminal_color_5 = C.term.purple
-  vim.g.terminal_color_13 = C.term.bright_purple
+  vim.g.terminal_color_5 = c.term.purple
+  vim.g.terminal_color_13 = c.term.bright_purple
 
-  vim.g.terminal_color_6 = C.term.cyan
-  vim.g.terminal_color_14 = C.term.bright_cyan
+  vim.g.terminal_color_6 = c.term.cyan
+  vim.g.terminal_color_14 = c.term.bright_cyan
 
-  vim.g.terminal_color_7 = C.term.white
-  vim.g.terminal_color_15 = C.term.bright_white
+  vim.g.terminal_color_7 = c.term.white
+  vim.g.terminal_color_15 = c.term.bright_white
 
-  vim.g.terminal_color_background = C.term.background
-  vim.g.terminal_color_foreground = C.term.foreground
+  vim.g.terminal_color_background = c.term.background
+  vim.g.terminal_color_foreground = c.term.foreground
 end
 
 return M

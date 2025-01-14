@@ -1,13 +1,13 @@
 ---@type AstroThemeCallback
-local function callback()
+local function callback(c)
   return {
-    WhichKey = { fg = C.ui.cyan },
-    WhichKeyFloat = { link = "NormalFloat" },
-    WhichKeyBorder = { link = "FloatBorder" },
-    WhichKeySeparator = { fg = C.ui.none_text },
-    WhichKeyDesc = { fg = C.ui.purple },
-    WhichKeyGroup = { fg = C.ui.blue },
-    WhichKeyValue = { fg = C.ui.active_text },
+    WhichKey = { fg = c.ui.cyan },
+    WhichKeyFloat = "NormalFloat",
+    WhichKeyBorder = "FloatBorder",
+    WhichKeySeparator = { fg = c.ui.none_text },
+    WhichKeyDesc = { fg = c.ui.purple },
+    WhichKeyGroup = { fg = c.ui.blue },
+    WhichKeyValue = { fg = c.ui.text_active },
   }
 end
 

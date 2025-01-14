@@ -1,19 +1,19 @@
 ---@type AstroThemeCallback
-local function callback()
+local function callback(c)
   return {
-    BufferLineBufferVisible = { fg = C.ui.text_inactive, bg = C.ui.base },
-    BufferLineBufferSelected = { fg = C.ui.text_active, bg = C.ui.base, bold = true },
-    BufferLineTab = { fg = C.ui.text_inactve, bg = C.ui.tabline },
-    BufferLineTabSelected = { fg = C.ui.text, bg = C.ui.tabline },
-    BufferLineTabClose = { fg = C.ui.red, bg = C.ui.tabline },
-    BufferLineIndicatorSelected = { fg = C.ui.base, bg = C.ui.base },
-    BufferLineCloseButtonVisible = { fg = C.ui.red, bg = C.tableline },
-    BufferLineCloseButtonSelected = { fg = C.ui.red, bg = C.ui.tabline },
-    BufferLineModifiedVisible = { fg = C.ui.text, bg = C.ui.base },
-    BufferLineModifiedSelected = { fg = C.ui.green, bg = C.ui.base },
-    BufferLineModified = { fg = C.ui.green, bg = C.ui.tabline },
-    BufferLineError = { fg = C.ui.red, bg = C.ui.red },
-    BufferLineErrorDiagnostic = { fg = C.ui.red, bg = C.ui.red },
+    BufferLineBufferVisible = { fg = c.ui.text_inactive, bg = c.ui.base },
+    BufferLineBufferSelected = { fg = c.ui.text_active, bg = c.ui.base, bold = true },
+    BufferLineTab = { fg = c.ui.text_inactive, bg = c.ui.tabline },
+    BufferLineTabSelected = { fg = c.ui.text, bg = c.ui.tabline },
+    BufferLineTabClose = { fg = c.ui.red, bg = c.ui.tabline },
+    BufferLineIndicatorSelected = { fg = c.ui.base, bg = c.ui.base },
+    BufferLineCloseButtonVisible = { fg = c.ui.red, bg = c.ui.tabline },
+    BufferLineCloseButtonSelected = { fg = c.ui.red, bg = c.ui.tabline },
+    BufferLineModifiedVisible = { fg = c.ui.text, bg = c.ui.base },
+    BufferLineModifiedSelected = { fg = c.ui.green, bg = c.ui.base },
+    BufferLineModified = { fg = c.ui.green, bg = c.ui.tabline },
+    BufferLineError = { fg = c.ui.red, bg = c.ui.red },
+    BufferLineErrorDiagnostic = { fg = c.ui.red, bg = c.ui.red },
   }
 end
 

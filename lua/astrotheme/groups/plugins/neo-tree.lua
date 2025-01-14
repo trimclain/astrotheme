@@ -1,57 +1,57 @@
 ---@type AstroThemeCallback
-local function callback(opts)
+local function callback(c, opts)
   return {
-    NeoTreeDirectoryIcon = { fg = C.ui.blue },
-    NeoTreeRootName = { fg = C.ui.text_active, bold = true },
-    NeoTreeFileName = { fg = C.ui.text },
-    NeoTreeFileIcon = { fg = C.ui.text },
-    NeoTreeFileNameOpened = { fg = C.ui.green },
-    NeoTreeFloatBorder = { fg = C.ui.float },
+    NeoTreeDirectoryIcon = { fg = c.ui.blue },
+    NeoTreeRootName = { fg = c.ui.text_active, bold = true },
+    NeoTreeFileName = { fg = c.ui.text },
+    NeoTreeFileIcon = { fg = c.ui.text },
+    NeoTreeFileNameOpened = { fg = c.ui.green },
+    NeoTreeFloatBorder = { fg = c.ui.float },
     NeoTreeFloatTitle = {
-      fg = opts.title_invert and C.ui.tool or C.ui.title,
-      bg = opts.title_invert and opts.title or C.ui.tool,
+      fg = opts.title_invert and c.ui.tool or c.ui.title,
+      bg = opts.title_invert and c.ui.title or c.ui.tool,
       bold = true,
     },
-    NeoTreeIndentMarker = { fg = C.ui.none_text },
+    NeoTreeIndentMarker = { fg = c.ui.none_text },
 
-    NeoTreeGitAdded = { fg = C.ui.green },
-    NeoTreeGitConflict = { fg = C.ui.red },
-    NeoTreeGitDeleted = { fg = C.ui.text_inactive },
-    NeoTreeGitIgnored = { fg = C.ui.text },
-    NeoTreeGitModified = { fg = C.ui.orange },
-    NeoTreeGitRenamed = { fg = C.ui.orange },
-    NeoTreeGitStaged = { fg = C.ui.cyan },
-    NeoTreeGitUntracked = { fg = C.ui.yellow },
-    NeoTreeGitUnstaged = { fg = C.ui.yellow },
+    NeoTreeGitAdded = { fg = c.ui.green },
+    NeoTreeGitConflict = { fg = c.ui.red },
+    NeoTreeGitDeleted = { fg = c.ui.text_inactive },
+    NeoTreeGitIgnored = { fg = c.ui.text },
+    NeoTreeGitModified = { fg = c.ui.orange },
+    NeoTreeGitRenamed = { fg = c.ui.orange },
+    NeoTreeGitStaged = { fg = c.ui.cyan },
+    NeoTreeGitUntracked = { fg = c.ui.yellow },
+    NeoTreeGitUnstaged = { fg = c.ui.yellow },
 
     NeoTreeTitleBar = {
-      fg = opts.title_invert and C.ui.tool or C.ui.title,
-      bg = (opts.title_invert and C.ui.title)
-        or (opts.neotree and C.ui.tool)
-        or (opts.transparent and C.none)
-        or C.ui.base,
+      fg = opts.title_invert and c.ui.tool or c.ui.title,
+      bg = (opts.title_invert and c.ui.title)
+        or (opts.neotree and c.ui.tool)
+        or (opts.transparent and c.none)
+        or c.ui.base,
       bold = true,
     },
     NeoTreeNormal = {
-      fg = C.ui.text,
-      bg = (opts.neotree and C.ui.tool) or (opts.transparent and C.none) or C.ui.base,
+      fg = c.ui.text,
+      bg = (opts.neotree and c.ui.tool) or (opts.transparent and c.none) or c.ui.base,
     },
     NeoTreeNormalNC = {
-      fg = C.ui.text,
-      bg = (opts.neotree and C.ui.tool) or (opts.transparent and C.none) or C.ui.base,
+      fg = c.ui.text,
+      bg = (opts.neotree and c.ui.tool) or (opts.transparent and c.none) or c.ui.base,
     },
-    NeoTreeSymbolicLinkTarget = { fg = C.ui.cyan },
+    NeoTreeSymbolicLinkTarget = { fg = c.ui.cyan },
     NeoTreeTabActive = {
-      fg = C.ui.text_active,
-      bg = opts.transparent and C.none or C.ui.tool,
+      fg = c.ui.text_active,
+      bg = opts.transparent and c.none or c.ui.tool,
       bold = true,
     },
-    NeoTreeTabInactive = { fg = C.ui.text_inactive, bg = C.ui.tabline },
-    NeoTreeTabSeparatorActive = { fg = C.ui.tool, bg = C.ui.tool },
-    NeoTreeTabSeparatorInactive = { fg = C.ui.tabline, bg = C.ui.tabline },
-    NeoTreeVertSplit = { fg = C.ui.split, bg = opts.transparent and C.none or C.ui.base },
-    NeoTreeWinSeparator = { fg = C.ui.split, bg = opts.transparent and C.none or C.ui.base, bold = true },
-    NeoTreeCursorLine = { link = "PmenuSel" },
+    NeoTreeTabInactive = { fg = c.ui.text_inactive, bg = c.ui.tabline },
+    NeoTreeTabSeparatorActive = { fg = c.ui.tool, bg = c.ui.tool },
+    NeoTreeTabSeparatorInactive = { fg = c.ui.tabline, bg = c.ui.tabline },
+    NeoTreeVertSplit = { fg = c.ui.split, bg = opts.transparent and c.none or c.ui.base },
+    NeoTreeWinSeparator = { fg = c.ui.split, bg = opts.transparent and c.none or c.ui.base, bold = true },
+    NeoTreeCursorLine = "PmenuSel",
   }
 end
 

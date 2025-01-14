@@ -11,48 +11,46 @@
 ---@field config AstroThemeOpts
 local M = { config = {} }
 
-C = {}
 local util = require "astrotheme.lib.util"
 
+local style_background = {
+  astrodark = "dark",
+  astrolight = "light",
+  astromars = "dark",
+  astrojupiter = "light",
+}
+
+local invert_style = {
+  astrodark = "astrolight",
+  astrolight = "astrodark",
+  astromars = "astrojupiter",
+  astrojupiter = "astromars",
+}
+
 --- Load a specific theme given a palette name
----@param theme string?
+---@param theme? string
 function M.load(theme)
-  if
-    not theme
-    or (
-      theme == M.config.palette
-      and vim.o.background ~= (M.config.palette == M.config.background["light"] and "light" or "dark")
-    )
-  then
+  if not theme then
     theme = M.config.background[vim.o.background]
+  elseif theme == M.config.palette then
+    if vim.o.background ~= style_background[theme] then theme = invert_style[theme] end
+  else
+    vim.o.background = style_background[theme]
   end
   M.config.palette = theme
-  util.reload(M.config, theme)
+  util.reload(M.config)
 
-  C = util.set_palettes(M.config)
+  local colors = util.set_palettes(M.config)
 
-  local highlights = {}
-  highlights = util.get_hl_modules(highlights, "astrotheme.groups", {
-    "base",
-    "syntax",
-    "lsp",
-    "treesitter",
-    "astronvim",
-  }, M.config)
+  local highlights = util.get_highlights(colors, M.config)
 
-  highlights = util.get_hl_modules(highlights, "astrotheme.groups.plugins", M.config.plugins, M.config)
+  util.set_highlights(highlights)
 
-  util.set_highlights(M.config, highlights, theme)
-  if M.config.terminal_colors then util.set_terminal_colors() end
+  if M.config.terminal_colors then util.set_terminal_colors(colors) end
 end
 
 --- Set up AstroTheme with provided user configured options
 ---@param opts AstroThemeOpts
-function M.setup(opts)
-  M.config = require("astrotheme.lib.config").user_config(opts)
-  M.config.plugins = util.get_plugin_list(M.config)
-
-  util.live_reloading(M.config)
-end
+function M.setup(opts) M.config = require("astrotheme.lib.config").user_config(opts) end
 
 return M

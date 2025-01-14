@@ -1,15 +1,15 @@
 ---@type AstroThemeCallback
-local function callback()
+local function callback(c)
   return {
-    MiniStarterItem = { fg = C.ui.text },
-    MiniStarterQuery = { fg = C.ui.green, bold = true },
-    MiniStarterHeader = { fg = C.ui.accent, bg = C.none },
-    MiniStarterFooter = { fg = C.ui.accent, bg = C.none },
-    MiniStarterCurrent = { fg = C.ui.text_active, underline = true, bold = true },
-    MiniStarterSection = { fg = C.ui.accent, bold = true },
-    MiniStarterInactive = { fg = C.ui.text_inactive },
-    MiniStarterItemBullet = { fg = C.ui.accent },
-    MiniStarterItemPrefix = { fg = C.ui.yellow },
+    MiniStarterItem = { fg = c.ui.text },
+    MiniStarterQuery = { fg = c.ui.green, bold = true },
+    MiniStarterHeader = { fg = c.ui.accent, bg = c.none },
+    MiniStarterFooter = { fg = c.ui.accent, bg = c.none },
+    MiniStarterCurrent = { fg = c.ui.text_active, underline = true, bold = true },
+    MiniStarterSection = { fg = c.ui.accent, bold = true },
+    MiniStarterInactive = { fg = c.ui.text_inactive },
+    MiniStarterItemBullet = { fg = c.ui.accent },
+    MiniStarterItemPrefix = { fg = c.ui.yellow },
   }
 end
 

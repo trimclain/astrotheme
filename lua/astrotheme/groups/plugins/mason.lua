@@ -1,26 +1,26 @@
 ---@type AstroThemeCallback
-local function callback()
+local function callback(c)
   return {
-    MasonNormal = { link = "NormalFloat" },
-    MasonHeader = { link = "FloatTitle" },
-    MasonHeaderSecondary = { bold = true, fg = C.ui.base, bg = C.ui.blue },
+    MasonNormal = "NormalFloat",
+    MasonHeader = "FloatTitle",
+    MasonHeaderSecondary = { bold = true, fg = c.ui.base, bg = c.ui.blue },
 
-    MasonHighlight = { fg = C.ui.blue },
-    MasonHighlightBlock = { bg = C.ui.blue, fg = C.ui.base },
-    MasonHighlightBlockBold = { bg = C.ui.accent, fg = C.ui.base, bold = true },
+    MasonHighlight = { fg = c.ui.blue },
+    MasonHighlightBlock = { bg = c.ui.blue, fg = c.ui.base },
+    MasonHighlightBlockBold = { bg = c.ui.accent, fg = c.ui.base, bold = true },
 
-    MasonHighlightSecondary = { fg = C.ui.accent },
-    MasonHighlightBlockSecondary = { bg = C.ui.accent, fg = C.ui.base },
-    MasonHighlightBlockBoldSecondary = { bg = C.ui.accent, fg = C.ui.base, bold = true },
+    MasonHighlightSecondary = { fg = c.ui.accent },
+    MasonHighlightBlockSecondary = { bg = c.ui.accent, fg = c.ui.base },
+    MasonHighlightBlockBoldSecondary = { bg = c.ui.accent, fg = c.ui.base, bold = true },
 
-    MasonLink = { link = "MasonHighlight" },
+    MasonLink = "MasonHighlight",
 
-    MasonMuted = { fg = C.ui.red },
-    MasonMutedBlock = { link = "CursorLine" },
-    MasonMutedBlockBold = { bg = C.ui.blue, fg = C.ui.base, bold = true },
+    MasonMuted = { fg = c.ui.red },
+    MasonMutedBlock = "CursorLine",
+    MasonMutedBlockBold = { bg = c.ui.blue, fg = c.ui.base, bold = true },
 
-    MasonError = { link = "ErrorMsg" },
-    MasonWarning = { link = "WarningMsg" },
+    MasonError = "ErrorMsg",
+    MasonWarning = "WarningMsg",
 
     MasonHeading = { bold = true },
   }

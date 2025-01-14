@@ -1,11 +1,11 @@
 ---@type AstroThemeCallback
-local function callback()
+local function callback(c)
   return {
-    TodoBgNOTE = { bg = C.ui.cyan, fg = C.ui.base, bold = true },
-    TodoBgTODO = { bg = C.ui.blue, fg = C.ui.base, bold = true },
-    TodoBgWARNING = { bg = C.ui.yellow, fg = C.ui.base, bold = true },
-    TodoBgHACK = { bg = C.ui.yellow, fg = C.ui.base, bold = true },
-    TodoBgBUG = { bg = C.ui.red, fg = C.ui.base, bold = true },
+    TodoBgNOTE = { bg = c.ui.cyan, fg = c.ui.base, bold = true },
+    TodoBgTODO = { bg = c.ui.blue, fg = c.ui.base, bold = true },
+    TodoBgWARNING = { bg = c.ui.yellow, fg = c.ui.base, bold = true },
+    TodoBgHACK = { bg = c.ui.yellow, fg = c.ui.base, bold = true },
+    TodoBgBUG = { bg = c.ui.red, fg = c.ui.base, bold = true },
 
     -- BUG: for some reason if todoBgPERF and TodoBgTEST are not commented
     -- out TodoBgNOTE breaks.
@@ -15,4 +15,4 @@ local function callback()
   }
 end
 
-return callback()
+return callback

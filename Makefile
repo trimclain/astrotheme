@@ -1,11 +1,9 @@
-TESTS_INIT=tests/minimal_init.lua
 TESTS_DIR=tests/
 
 .PHONY: test
-
 test:
-	@nvim \
-		--headless \
-		--noplugin \
-		-u ${TESTS_INIT} \
-		-c "PlenaryBustedDirectory ${TESTS_DIR} { minimal_init = '${TESTS_INIT}' }"
+	@nvim -l ${TESTS_DIR}/minit.lua --minitest -o utfTerminal
+
+.PHONY: extras
+extras:
+	@nvim -u ${TESTS_DIR}/minit.lua --headless +"lua require('astrotheme.extras').setup()" +qa

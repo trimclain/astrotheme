@@ -1,20 +1,20 @@
 ---@type AstroThemeCallback
-local function callback(opts)
+local function callback(c, opts)
   return {
-    NvChAsciiHeader = { bg = opts.transparent and C.none or C.ui.base, fg = C.ui.title }, -- Title
-    NvChSection = { bg = C.ui.highlight }, -- Each card
+    NvChAsciiHeader = { bg = opts.transparent and c.none or c.ui.base, fg = c.ui.title }, -- Title
+    NvChSection = { bg = c.ui.highlight }, -- Each card
 
     -- Colors for the headers
-    NvCheatsheetWhite = { bg = C.ui.text_match, fg = C.ui.base },
-    NvCheatsheetGray = { bg = C.ui.text, fg = C.ui.base },
-    NvCheatsheetBlue = { bg = C.ui.blue, fg = C.ui.base },
-    NvCheatsheetCyan = { bg = C.ui.cyan, fg = C.ui.base },
-    NvCheatsheetRed = { bg = C.ui.red, fg = C.ui.base },
-    NvCheatsheetGreen = { bg = C.ui.green, fg = C.ui.base },
-    NvCheatsheetYellow = { bg = C.ui.yellow, fg = C.ui.base },
-    NvCheatsheetOrange = { bg = C.ui.orange, fg = C.ui.base },
-    NvCheatsheetPurple = { bg = C.ui.purple, fg = C.ui.base },
-    NvCheatsheetMagenta = { bg = C.syntax.purple, fg = C.ui.base },
+    NvCheatsheetWhite = { bg = c.ui.text_match, fg = c.ui.base },
+    NvCheatsheetGray = { bg = c.ui.text, fg = c.ui.base },
+    NvCheatsheetBlue = { bg = c.ui.blue, fg = c.ui.base },
+    NvCheatsheetCyan = { bg = c.ui.cyan, fg = c.ui.base },
+    NvCheatsheetRed = { bg = c.ui.red, fg = c.ui.base },
+    NvCheatsheetGreen = { bg = c.ui.green, fg = c.ui.base },
+    NvCheatsheetYellow = { bg = c.ui.yellow, fg = c.ui.base },
+    NvCheatsheetOrange = { bg = c.ui.orange, fg = c.ui.base },
+    NvCheatsheetPurple = { bg = c.ui.purple, fg = c.ui.base },
+    NvCheatsheetMagenta = { bg = c.syntax.purple, fg = c.ui.base },
   }
 end
 

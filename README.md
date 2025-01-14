@@ -234,15 +234,23 @@ term.foreground
 | Plugin                                                                          | Key                  |
 | ------------------------------------------------------------------------------- | -------------------- |
 | [aerial.nvim](https://github.com/stevearc/aerial.nvim)                          | `aerial`             |
+| [avante.nvim](https://github.com/yetone/avante.nvim)                            | `avante`             |
 | [beacon.nvim](https://github.com/DanilaMihailov/beacon.nvim)                    | `beacon`             |
+| [blink.cmp](https://github.com/Saghen/blink.cmp)                                | `blink-cmp`          |
 | [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)                   | `bufferline`         |
 | [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)                     | `dashboard-nvim`     |
 | [flash.nvim](https://github.com/folke/flash.nvim)                               | `flash`              |
+| [fzf-lua](https://github.com/ibhagwan/fzf-lua)                                  | `fzf`                |
 | [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                     | `gitsigns`           |
 | [hop.nvim](https://github.com/phaazon/hop.nvim)                                 | `hop`                |
 | [indent_blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) | `indent-blankline`   |
+| [lazy.nvim](https://github.com/folke/lazy.nvim)                                 | `lazy`               |
 | [lightspeed.nvim](https://github.com/ggandor/lightspeed.nvim)                   | `lightspeed`         |
 | [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)                    | `lualine`            |
+| [mason.nvim](https://github.com/williamboman/mason.nvim)                        | `mason`              |
+| [mini.nvim](https://github.com/echasnovski/mini.nvim)                           | `mini`               |
+| [mini.icons](https://github.com/echasnovski/mini.icons)                         | `miniicons`          |
+| [mini.starter](https://github.com/echasnovski/mini.starter)                     | `ministarter`        |
 | [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)                 | `neo-tree`           |
 | [neogit](https://github.com/NeogitOrg/neogit)                                   | `neogit`             |
 | [noice.nvim](https://github.com/folke/noice.nvim)                               | `noice`              |
@@ -257,7 +265,7 @@ term.foreground
 | [nvim-window-picker](https://github.com/s1n7ax/nvim-window-picker)              | `nvim-window-picker` |
 | [rainbow-delimiters.nvim](https://github.com/HiPhish/rainbow-delimiters.nvim)   | `rainbow-delimiters` |
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)              | `telescope`          |
-| [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)               | `telescope`          |
+| [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)               | `todo-comments`          |
 | [vimwiki](https://github.com/vimwiki/vimwiki)                                   | `vimwiki`            |
 | [vim-illuminate](https://github.com/RRethy/vim-illuminate)                      | `vim-illuminate`     |
 | [which-key.nvim](https://github.com/folke/which-key.nvim)                       | `which-key`          |
@@ -279,3 +287,13 @@ Packer:
 ## 🚀 Contributing
 
 If you plan to contribute, please check the [contribution guidelines](https://github.com/AstroNvim/.github/blob/main/CONTRIBUTING.md) first.
+
+When contributing to the extras, we use a templating system for automatically generating extra files for all of the different color palettes. Here are some steps to get started:
+
+1. Create a file like `lua/astrotheme/extras/cool-app.lua`
+2. Add the name and output file extension to the `extras` table in `lua/astrotheme/extra/init.lua`
+3. Generate the new extra theme files by running the following command in the root of the repository:
+   ```sh
+   make extras
+   ```
+4. Verify the new templates are working by checking the generated files in the `extras/` directory. Please **DO NOT** commit them, as they get automatically built by the CI.
